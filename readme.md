@@ -26,7 +26,7 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
 
 - ### **Pré-requisitos**
 
-  - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado no computador
+  - É **necessário** possuir o **[Laravel](https://laravel.com/)** instalado no computador
   - É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado no computador
   - Também, é **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
 
@@ -48,6 +48,8 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
   $ no arquivo .env use DB_DATABASE=olxlaravel ou o nome que você colocou no db
   # Gere uma nova chave para a aplicação laravel:
   $ php artisan key:generate
+  # Publicar configuração de JWT
+  $ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
   # Inicie a API
   $ php artisan serve --host=0.0.0.0
 
@@ -56,13 +58,18 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
   $ cd frontend
   # Instalando as dependências do projeto.
   $ yarn ou npm install
+  # configurando arquivo api.js
+  $ troque o baseURL: para 'http://ipdasuamaquina:8000/api'
   # Inicie a aplicação web
   $ yarn start ou npm start
 
   # Aplicação mobile
+  $ cd olx
   $ cd mobile
   # Instalando as dependências do projeto.
   $ yarn ou npm install
+  # configurando arquivo api.js
+  $ troque o baseURL: para 'http://ipdasuamaquina:8000/api'
   # Inicie a aplicação mobile
   $ yarn start ou npm start
 ```
