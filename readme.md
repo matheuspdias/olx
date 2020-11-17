@@ -48,6 +48,8 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
   $ no arquivo .env use DB_DATABASE=olxlaravel ou o nome que você colocou no db
   # Gere uma nova chave para a aplicação laravel:
   $ php artisan key:generate
+  # Publicar configuração de JWT
+  $ php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
   # Inicie a API
   $ php artisan serve --host=0.0.0.0
 
