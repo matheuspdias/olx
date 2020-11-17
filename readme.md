@@ -57,12 +57,12 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
   # Instalando as dependências do projeto.
   $ yarn # ou npm install
   # Inicie a aplicação web
-  $ yarn start # ou npm start
+  $ yarn start  ou npm start
 
   # Aplicação mobile
   $ cd mobile
   # Instalando as dependências do projeto.
   $ yarn # ou npm install
   # Inicie a aplicação mobile
-  $ yarn start # ou npm start
+  $ yarn start  ou npm start
 ```
