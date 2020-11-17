@@ -26,7 +26,7 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
 
 - ### **Pré-requisitos**
 
-  - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado no computador
+  - É **necessário** possuir o **[Laravel](https://laravel.com/)** instalado no computador
   - É **necessário** possuir o **[Git](https://git-scm.com/)** instalado e configurado no computador
   - Também, é **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
 
