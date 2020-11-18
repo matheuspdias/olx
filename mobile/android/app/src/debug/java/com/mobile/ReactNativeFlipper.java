@@ -40,7 +40,7 @@ public class ReactNativeFlipper {
           new NetworkingModule.CustomClientBuilder() {
             @Override
             public void apply(OkHttpClient.Builder builder) {
-              builder.addNetworkInterceptor(new FlipperOkhttpInterceptor(networkFlipperPlugin));
+             // builder.addNetworkInterceptor(new FlipperOkhttpInterceptor(networkFlipperPlugin));
             }
           });
       client.addPlugin(networkFlipperPlugin);

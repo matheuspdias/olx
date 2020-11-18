@@ -9,7 +9,7 @@ import SignInput from '../../components/SignInput';
 
 export default () => {
     const navigation = useNavigation();
-    const [emailField, setEmailField] = useState('matheus@gmail.com');
+    const [emailField, setEmailField] = useState('');
     const [passwordField, setPasswordField] = useState('');
 
     const handleSignMessageClick = () => {

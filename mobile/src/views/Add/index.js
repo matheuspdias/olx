@@ -25,37 +25,48 @@ export default function index() {
     }
 
     const getCategories = async () => {
-        const token = await AsyncStorage.getItem('token');
-        setCategories([]);
-
-        await Api.get(`/categories?token=${token}`).then((res) => {
-         setCategories(res.data.data);
-        });
-
+        await Api.get('/categories').then((res) => {
+            setCategories(res.data);
+        })
     }
+
+    useEffect(()=>{
+        getCategories();
+    }, [])
 
     const handleSubmit = async () => {
         const token = await AsyncStorage.getItem('token'); 
         
+        //if (title && category && description && price) {
         let uploadData = new FormData();
         uploadData.append('title', title);
         uploadData.append('category', category);
         uploadData.append('description', description);
         uploadData.append('price', price);
-        uploadData.append('cover', image.uri, 'image.jpg');
-        
-        await Api.post(`/announcement?token=${token}`, uploadData, {headers: {"Content-type": "multipart/form-data"}}).then((res) => {
-            if(res.data.error) {
-                alert(res.data.error)
-            } else {                
-                alert('Anúncio cadastrado com sucesso!')
-                navigation.reset({
-                    routes:[{name: 'MainDrawer'}]
-                });
-            }            
+        uploadData.append('zipcode', '08412030');
+        uploadData.append('cover', {
+            uri: `file://${image.path}`,
+            type:image.type,
+            name: image.fileName
         });
 
-    }
+        try {
+            const res = await Api.post(`/announcement?token=${token}`, uploadData, {headers: {"Content-type": "multipart/form-data"}});
+            alert('Anúncio cadastrado com sucesso!')
+            navigation.reset({
+                routes:[{name: 'MainDrawer'}]
+            });
+            
+        }
+
+        catch(err) {
+            console.log(err)
+        }
+
+           // } else {
+           //     alert('Prencha todos os campos!');
+           // }
+        }
 
      SelectImage = async () => {
         ImagePicker.showImagePicker({ mediaType: 'photo'}, (response) => {
@@ -72,9 +83,7 @@ export default function index() {
         })
     }
 
-    useEffect(()=>{
-        getCategories();
-    }, [])
+    
 
     return (
         <S.Container>
@@ -119,7 +128,7 @@ export default function index() {
                         >
                             <Picker.Item label="Selecione uma categoria" value="" />
                             {categories.map((item, key) => (
-                                <Picker.Item key={key} label={item.name} value={item.name} />
+                                <Picker.Item key={key} label={item.name} value={item.id} />
                             ))}
                         </Picker>
                     </S.PickerArea>
