@@ -37,18 +37,20 @@ export default function index() {
     const handleSubmit = async () => {
         const token = await AsyncStorage.getItem('token'); 
         
-        //if (title && category && description && price) {
+        if (title && category && description && price) {
         let uploadData = new FormData();
         uploadData.append('title', title);
         uploadData.append('category', category);
         uploadData.append('description', description);
         uploadData.append('price', price);
         uploadData.append('zipcode', '08412030');
-        uploadData.append('cover', {
-            uri: `file://${image.path}`,
-            type:image.type,
-            name: image.fileName
-        });
+        if(image) {
+            uploadData.append('cover', {
+                uri: `file://${image.path}`,
+                type:image.type,
+                name: image.fileName
+            });
+        }
 
         try {
             const res = await Api.post(`/announcement?token=${token}`, uploadData, {headers: {"Content-type": "multipart/form-data"}});
@@ -63,9 +65,9 @@ export default function index() {
             console.log(err)
         }
 
-           // } else {
-           //     alert('Prencha todos os campos!');
-           // }
+           } else {
+                alert('Prencha todos os campos!');
+            }
         }
 
      SelectImage = async () => {
