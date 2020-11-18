@@ -39,6 +39,7 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
 2. Executando a Aplicação:
 
 ```sh
+  # IMPORTE O ARQUIVO OLXAPI.SQL PARA SUA MAQUINA PELO PHPMYADMIN
   # API
   $ cd olx
   $ cd backend
@@ -71,5 +72,5 @@ O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalida
   # configurando arquivo api.js
   $ troque o baseURL: para 'http://ipdasuamaquina:8000/api'
   # Inicie a aplicação mobile
-  $ yarn start ou npm start
+  $ npx react-native run-android
 ```
