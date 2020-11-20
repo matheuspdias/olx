@@ -12,7 +12,7 @@
 
 ## :bookmark: Sobre
 
-O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalidades tanto no frontend como no backend, foi feito apenas para treinas habilidades fullstack*.
+O **Projeto** é uma copia do OLX com o desafio de criar todas suas funcionalidades tanto no frontend como no backend, foi feito apenas para treinar habilidades **fullstack**.
   
 
 
