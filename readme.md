@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Proffy" src="olxtemplate.png"  width="1000px" />
+    <img alt="Olx" src="olxtemplate.png"  width="1000px" />
     <br>Projeto fullstack OLX Clone<br/>
     Laravel | ReactJS | React Native
 </h1> 
